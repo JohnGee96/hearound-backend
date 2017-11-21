@@ -1,7 +1,7 @@
 from server import app, initApiServer
 
 def http(app):
-    app.run(host='localhost', port=5000)
+    app.run(host='0.0.0.0', port=80)
 
 # def https(app):
 #     app.run(host='0.0.0.0', port='443',)
