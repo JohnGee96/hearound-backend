@@ -11,7 +11,6 @@ ENV/
 
 # Database
 logfile
-db/
 
 #python cache
 __pycache__
