@@ -10,7 +10,7 @@ def http(app):
 
 def https(app):
     sslContext = ('./ssl/cert.pem', './ssl/key.pem')
-    app.run(host='localhost', port=443, ssl_context=sslContext)
+    app.run(host='0.0.0.0', port=443, ssl_context=sslContext)
 
 # def getopts(argv):
 #     """Collect command-line options in a dictionary"""
