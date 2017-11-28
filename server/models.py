@@ -64,7 +64,11 @@ class User(db.Model):
         self.password = generate_password_hash(password)
     def checkPassword(self, password):
         return check_password_hash(self.password, password)
-    def getUsername(self):
-        return self.username
-    def getEmail(self):
-        return self.email
+    def getUser(self):
+        return { 
+                "username": self.username,
+                "email": self.email,
+                "user_id": self.id
+            }
+
+    

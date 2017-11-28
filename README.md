@@ -81,6 +81,80 @@ Example Response:
         "updated_at": "2017-10-30T23:54:12"
     }
 
+### GET /api/users 
+Retrieves all users with their email and the posts they created
+
+Example request:
+
+    curl -X GET http://<Server_IP>/api/users
+
+Example Response:
+
+    {
+        "num_results": 4, 
+        "objects": [
+            {
+            "email": "ssmith@smith.com", 
+            "id": 1, 
+            "post": [
+                {
+                "id": 1
+                }, 
+                {
+                "id": 2
+                }
+            ], 
+            "username": "Ssmith"
+            }, 
+            {
+            "email": "kon.kin@kin.com", 
+            "id": 2, 
+            "post": [], 
+            "username": "kkin"
+            }, 
+            {
+            "email": "john.kurt@kurt.com", 
+            "id": 3, 
+            "post": [], 
+            "username": "jkurt"
+            }, 
+            {
+            "email": "kate.lin@kate.com", 
+            "id": 4, 
+            "post": [], 
+            "username": "jlin"
+            }
+        ], 
+        "page": 1, 
+        "total_pages": 1
+    }
+
+### POST /api/signup
+Register a new user. Supply the following JSON in the POST request
+
+    {
+        "email": "example@ex.com"
+        "username": "user1"
+        "password": "some_password"
+    }
+
+Example Request:
+
+    curl -H "Content-Type: application/json" -X POST -d '{ "email": "example@ex.com","username": "user1","password":"some_password"}' http://<Server_IP>/api/signup
+
+### POST /api/login
+Authenticate a existing user. Supply the following JSON in the request
+
+    {
+        "email": "example@ex.com"
+        "password": "some_password"
+    }
+
+Example Request
+
+    curl -H "Content-Type: application/json" -X POST -d '{ "email": "example@ex.com","password":"some_password"}' http://<Server_IP>/api/login
+
+
 ### POST /api/nearby_posts
 Retrieve posts within a fixed radius around a geolocation. Must provide a POST request with the following
 JSON format:

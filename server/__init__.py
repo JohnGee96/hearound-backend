@@ -1,11 +1,8 @@
-from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_restless import APIManager
 from server.models import db
 from server.api import *
-
-# Init app instance
-app = Flask(__name__)
+from server.app import app
 
 def initApiServer(conf):
     # load config

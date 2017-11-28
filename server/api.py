@@ -1,5 +1,7 @@
 # Define API endpoints using Flask-Restless
 from server.models import Post, User
+from server.authenticate import signup, login
+from server.nearbyPost import find_nearby_posts, find_neearby_post_locations
 
 def createApi(manager):
     user_cols = ['id', 'username', 'email', 'post', 'post.id']
