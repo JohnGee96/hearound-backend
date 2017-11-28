@@ -13,7 +13,7 @@ def signup():
             newUser = User(request.json["username"],request.json["email"], request.json["password"])
             db.session.add(newUser)
             db.session.commit()
-            return newUser.password
+            return "Sign Up Successful"
     else:
         abort(400, "Invalid Form")
 

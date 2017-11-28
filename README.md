@@ -142,6 +142,10 @@ Example Request:
 
     curl -H "Content-Type: application/json" -X POST -d '{ "email": "example@ex.com","username": "user1","password":"some_password"}' http://<Server_IP>/api/signup
 
+Example Response:
+
+    Sign Up Successful
+
 ### POST /api/login
 Authenticate a existing user. Supply the following JSON in the request
 
@@ -154,6 +158,13 @@ Example Request
 
     curl -H "Content-Type: application/json" -X POST -d '{ "email": "example@ex.com","password":"some_password"}' http://<Server_IP>/api/login
 
+Example Response:
+
+    {
+        "email": "example@ex.com", 
+        "user_id": 0, 
+        "username": "user1"
+    }
 
 ### POST /api/nearby_posts
 Retrieve posts within a fixed radius around a geolocation. Must provide a POST request with the following
