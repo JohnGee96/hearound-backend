@@ -1,0 +1,17 @@
+# virtualenv
+venv
+.ENV
+ENV/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+
+# Database
+logfile
+db/
+
+#python cache
+__pycache__
