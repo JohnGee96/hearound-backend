@@ -5,7 +5,7 @@ from server.app import app
 @app.route('/api/signup', methods=['POST'])
 def signup():
     if not request.json:
-        abort(400, "Invalid Form")
+        abort(400, "Invalid form")
     if all (key in request.json for key in ("email","password", "username")):
         if User.query.filter_by(email=request.json["email"]).first():
             abort(400, "Email address already exists")
@@ -13,9 +13,9 @@ def signup():
             newUser = User(request.json["username"],request.json["email"], request.json["password"])
             db.session.add(newUser)
             db.session.commit()
-            return "Sign Up Successful"
+            return "Sign up successful"
     else:
-        abort(400, "Invalid Form")
+        abort(400, "Invalid form")
 
 def authenticate(json):
     input_email = json["email"]
@@ -37,6 +37,6 @@ def login():
         if user:
             return jsonify(user)
         else:
-            return "Invalid Authentication"
+            return "Invalid authentication"
     else:
         abort(400)
