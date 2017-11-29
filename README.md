@@ -144,7 +144,11 @@ Example Request:
 
 Example Response:
 
-    Sign Up Successful
+    {
+        "email": "example@ex.com", 
+        "user_id": 0, 
+        "username": "user1"
+    }
 
 ### POST /api/login
 Authenticate a existing user. Supply the following JSON in the request
