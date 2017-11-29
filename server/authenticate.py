@@ -23,7 +23,6 @@ def authenticate(json):
     user = User.query.filter_by(email=input_email).first()
     if user:
         if user.checkPassword(input_pw):
-            # print(user.password)
             return user.getUser()
     return None
 
@@ -37,6 +36,6 @@ def login():
         if user:
             return jsonify(user)
         else:
-            return "Invalid authentication"
+            abort(401,"Invalid authentication")
     else:
-        abort(400)
+        abort(400, "Invalid form")
