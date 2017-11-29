@@ -18,7 +18,7 @@ Example Response:
                 "id": 1, 
                 "lat": 42.3639457, 
                 "lng": -71.0569078, 
-                "title": "Boston", 
+                "user_id": "Boston", 
                 "updated_at": "2017-10-30T23:54:12"
             }, 
             {
@@ -27,7 +27,7 @@ Example Response:
                 "id": 2, 
                 "lat": 40.7137746, 
                 "lng": -74.0060504, 
-                "title": "New York", 
+                "user_id": "New York", 
                 "updated_at": "2017-10-31T00:49:39"
             }, 
             {
@@ -36,7 +36,7 @@ Example Response:
                 "id": 3, 
                 "lat": 34.055588, 
                 "lng": -118.2283376, 
-                "title": "Los Angeles", 
+                "user_id": "Los Angeles", 
                 "updated_at": "2017-10-31T00:42:50"
             }, 
             {
@@ -45,7 +45,7 @@ Example Response:
                 "id": 4, 
                 "lat": 51.5076913, 
                 "lng": -0.1288709, 
-                "title": "London", 
+                "user_id": "London", 
                 "updated_at": "2017-10-31T00:45:01"
             }, 
             {
@@ -54,7 +54,7 @@ Example Response:
                 "id": 5, 
                 "lat": 42.4088871, 
                 "lng": -71.1196583, 
-                "title": "Hillside Apartments", 
+                "user_id": "Hillside Apartments", 
                 "updated_at": "2017-10-31T00:47:00"
             }
         ], 
@@ -77,7 +77,7 @@ Example Response:
         "id": 1, 
         "lat": 42.3639457, 
         "lng": -71.0569078, 
-        "title": "Boston", 
+        "user_id": "Boston", 
         "updated_at": "2017-10-30T23:54:12"
     }
 
@@ -196,7 +196,7 @@ Example Response:
             "2017-10-31", 
             "00:47:00"
             ], 
-            "title": "Hillside Apartments", 
+            "username": "ssmith", 
             "updated_at": [
             "2017-10-31", 
             "00:47:00"
@@ -211,7 +211,7 @@ Example Response:
             "2017-10-31", 
             "01:08:39"
             ], 
-            "title": "Halligan Hall", 
+            "username": "ssmith", 
             "updated_at": [
             "2017-10-31", 
             "01:08:39"
@@ -246,7 +246,7 @@ Example Response:
                 "type": "Point"
             }, 
             "properties": {
-                "author": "John Smith"
+                "username": "John Smith"
             }, 
             "type": "Feature"
             }, 
@@ -259,7 +259,7 @@ Example Response:
                 "type": "Point"
             }, 
             "properties": {
-                "author": "John Smith"
+                "username": "John Smith"
             }, 
             "type": "Feature"
             }
@@ -272,7 +272,7 @@ Example Response:
 Create a new post by providing a POST request with following JSON format:
 
     {
-        "title": "Sample Post",
+        "user_id": 0,
         "body": "This the body of a sample post", 
         "lat": 42.408226
         "lng": -71.115944
@@ -280,13 +280,13 @@ Create a new post by providing a POST request with following JSON format:
 
 Example request:
 
-    curl -H "Content-Type: application/json" -X POST -d '{"title":"Sample Post", "body": "This the body of a sample post", "lat": 42.408226, "lng": -71.115944}' http://<Server_IP>/api/posts
+    curl -H "Content-Type: application/json" -X POST -d '{"user_id": 0, "body": "This the body of a sample post", "lat": 42.408226, "lng": -71.115944}' http://<Server_IP>/api/posts
 
 ### PUT /api/posts/#
 Update the Post with id #. Provide the PUT request with the following JSON:
 
     {
-        "title": "Sample Post",
+        "user_id": 0,
         "body": "This will replace the body of the original Sample Post", 
         "lat": 42.408226
         "lng": -71.115944
@@ -295,4 +295,4 @@ Update the Post with id #. Provide the PUT request with the following JSON:
 
 Example request:
 
-    curl -H "Content-Type: application/json" -X PUT -d '{"title":"Sample Post", "body": "This will replace the body of the original Sample Post", "lat": 42.408226, "lng": -71.115944}' http://<Server_IP>/api/posts/1
+    curl -H "Content-Type: application/json" -X PUT -d '{"user_id": 0, "body": "This will replace the body of the original Sample Post", "lat": 42.408226, "lng": -71.115944}' http://<Server_IP>/api/posts/1
